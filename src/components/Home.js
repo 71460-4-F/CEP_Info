@@ -11,8 +11,12 @@ function Home() {
       alert("Informe o CEP!")
       return
     }
+    if (input.length < 8) {
+      alert("O CEP deve conter 8 digitos!")
+      return
+    }
     try {
-     await fetch(`https://viacep.com.br/ws/${input}/json/`, {
+      await fetch(`https://viacep.com.br/ws/${input}/json/`, {
         method: 'GET',
         headers: {
           Accept: 'aplication/json'
@@ -34,27 +38,35 @@ function Home() {
   return (
     <div className="home">
       <h1 className="appTitle">CEP Info <GiBinoculars id="icon" size={50}></GiBinoculars></h1>
-
-      <div>
+      <div className="inputContainer">
         <input
           type="text"
           placeholder="Digite o CEP..."
           value={input}
+          maxLength={8}
           onChange={(e) => setInput(e.target.value)}
         ></input>
         <button className="searchButton" onClick={handlerSearch}>
-          <FiSearch size={17}></FiSearch>
+          <FiSearch size={17} color="grey"></FiSearch>
         </button>
       </div>
-      <main className="mainInfo">
-        <h2>CEP: {info.cep}</h2>
-        <span>Logradouro: {info.logradouro}</span>
-        <span>Complemento: {info.complemento}</span>
-        <span>Bairro: {info.bairro}</span>
-        <span>Localidade: {info.localidade}</span>
-        <span>UF: {info.uf}</span>
-        <span>DDD: {info.ddd}</span>
-      </main>
+      {Object.keys(info).length > 1 && (
+        <main className="mainInfo">
+          <h2>CEP: {info.cep}</h2>
+          <span>Logradouro: {info.logradouro}</span>
+          <span>Complemento: {info.complemento}</span>
+          <span>Bairro: {info.bairro}</span>
+          <span>Localidade: {info.localidade}</span>
+          <span>UF: {info.uf}</span>
+          <span>DDD: {info.ddd}</span>
+        </main>
+      )}
+
+      {Object.keys(info).length > 0 && Object.keys(info).length < 2 && (
+        <main className="mainInfo">
+          <h2>CEP não encontrado!</h2>
+        </main>
+      )}
     </div>
   );
 }

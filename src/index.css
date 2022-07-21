@@ -23,12 +23,19 @@ code {
   background-color: rgb(43, 98, 143);
 }
 
+.inputContainer{
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+
 input{
   border: 0;
   height: 22.8px;
   font-size: 18px;
   width: 150px;
   outline: none;
+  align-items: center;
 }
 
 span{
@@ -36,7 +43,10 @@ span{
 }
 
 button{
-  margin: 3px;
+  margin: 1px;
+  cursor: pointer;
+  border: 0;
+  height: 24.5px;
 }
 
 .mainInfo{
