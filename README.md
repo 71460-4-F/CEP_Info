@@ -1,3 +1,4 @@
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -69,3 +70,14 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 # CEP_Info
+
+![](https://api.visitorbadge.io/api/VisitorHit?user=71460-4-F&repo=CEP_Info&countColor=blue)
+
+Demo screenshot:
+
+![image](https://user-images.githubusercontent.com/38273600/180244573-62debf53-3f1b-4129-b74a-8b2ee479698b.png)
+
+API Zip Code Brasil: https://viacep.com.br
+
+
+
